@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
-
+ 
   def create
     @article = Article.new
     @article.title = params[:title]
@@ -25,14 +25,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
     @article = Article.find(params[:id])
     @article.update(post_params)
     redirect_to article_path(@article)
   end
 
-  private           
-
+  private           #the methods inside private can only be called within the class
+#strong params -- specifics the user which part can be updated
   def post_params
     params.require(:article).permit(:title, :description)
   end
