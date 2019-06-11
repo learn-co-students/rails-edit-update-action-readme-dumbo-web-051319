@@ -1,0 +1,7 @@
+<h1> Formulario para editar </h1>
+
+<%= form_for @article do |f| %>
+    Title: <%= f.text_field :title %>
+    Description: <%= f.text_area :description %>
+    <%= f.submit "Submit Article" %>
+  <% end %>
